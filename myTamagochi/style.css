@@ -1,0 +1,43 @@
+body {
+    margin: 0 auto;
+    width: 400px;
+    height: 100vh;
+}
+
+.tamagochi__title_align {
+    text-align: center;
+}
+
+.tamagochi__type {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.tamagochi__level {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.tamagochi__action {
+    display: flex;
+    justify-content: space-between;  
+    flex-wrap: wrap;
+}
+
+.tamagochi__button {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 40px;
+}
+
+.time {
+    font-weight: 700;
+    color: #457585;
+    padding-top: 20px;
+}

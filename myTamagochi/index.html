@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Tamagochi</title>
+</head>
+<body>
+    <h1 class="tamagochi__title_align">Tamagochi</h1>
+    <div class="tamagochi__level">
+        <h4 class="tamagochi__title_align">Select type of Tamagotchi:</h4>
+        <div class="tamagochi__type">
+            <select id="select">
+                <option value="Fluffy kitty">Easy level</option>
+                <option value="Lazy pug">Hard level</option>
+                <option value="Ninja">Very hard level</option>
+            </select>
+            <p>Your pet is: <span id="valuePet"></span></p>
+      </div>
+        <button class="tamagochi__button" onclick="start()">Start</button>
+    </div>
+    <div>
+        <h4 class="tamagochi__title_align">Actions</h4>
+        <div class="tamagochi__action" id="actions">
+            <button class="tamagochi__button" onclick="eat()" id="eat">Eat</button>
+            <button class="tamagochi__button" onclick="wash()" id="wash">Wash</button >
+            <button class="tamagochi__button" onclick="run()" id="run">Run</button>
+            <button class="tamagochi__button" onclick="visitDoctor()" id="visitDoctor">Visit doctor</button>
+            <button class="tamagochi__button" onclick="goToBar()" id="goToBar">Go to bar</button>
+            <button class="tamagochi__button" onclick="goToWork()" id="goToWork">Go to work</button>
+            <button class="tamagochi__button" onclick="buyFood()" id="buyFood">Buy food</button>
+            <button class="tamagochi__button" onclick="startBusiness()" id="startBusiness">Start a business</button>
+        </div>
+    </div>
+    <div>
+        <h4 class="tamagochi__title_align">Stats</h4>
+        <p>Food: <span id="valueFood"></span></p>
+        <p>Clean: <span id="valueClean"></span></p>
+        <p>Happiness: <span id="valueHappiness"></span></p>
+        <p>Health: <span id="valueHealth"></span></p>
+        <p>Socialization: <span id="valueSocialization"></span></p>
+        <p>Money: <span id="valueMoney"></span></p>
+    </div>
+    <div>
+        <p class="time">Your pet lived: <span id="valueTime"></span> </p>
+    </div>
+    <div>
+        <button class="tamagochi__button" id="restart">Restart Game</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
