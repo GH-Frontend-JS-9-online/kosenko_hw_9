@@ -111,28 +111,21 @@ function start() {
         setStatsEasy();
         startEasy();
         document.getElementById("valuePet").innerHTML = select.value;
-        eat(index);
-        run(index);
-        wash(index);
+        help();
      } else if (select.selectedIndex === 1) {
         index = 1;
         setStatsHard();
         startHard();
         document.getElementById("valuePet").innerHTML = select.value;
-        eat(index);
-        run(index);
-        wash(index);
+        help();
     } else if (select.selectedIndex === 2) {
         index = 2;
         setStatsHard();
         startVeryHard();
         document.getElementById("valuePet").innerHTML = select.value;
-        eat(index);
-        run(index);
-        wash(index);
+        help();
     }
     lifeTime();
-    help();
 }
 
 function eat() {
@@ -210,7 +203,21 @@ function visitDoctor() {
 };
 
 function goToBar() {
-    food = food + 10;
+    if (index === 0) {
+        if (food <= 90) {
+            food = food + 10;
+        } else {
+            food = 100;
+        }
+    } else if (index === 1) {
+        if (food <= 60) {
+            food = food + 10;
+        } else {
+            food = 70;
+        }
+    } else if (index === 2) {
+        food = food + 10;
+    }
     socialization = socialization + 40;
     health = health - 10;
     money = money - 20;
@@ -234,7 +241,21 @@ function goToWork() {
 };
 
 function buyFood() {
-    food = food + 20;
+    if (index === 0) {
+        if (food <= 80) {
+            food = food + 20;
+        } else {
+            food = 100;
+        }
+    } else if (index === 1) {
+        if (food <= 50) {
+            food = food + 20;
+        } else {
+            food = 70;
+        }
+    } else if (index === 2) {
+        food = food + 20;
+    }
     money = money - 20;
     document.getElementById("valueFood").innerHTML = food;
     document.getElementById("valueMoney").innerHTML = money;
@@ -242,7 +263,21 @@ function buyFood() {
 };
 
 function startBusiness() {
-    happiness = happiness + 100;
+    if (index === 0) {
+        if (happiness < 100) {
+            happiness = happiness + (100 - happiness);
+        } else {
+            happiness = 100;
+        }
+    } else if (index === 1) {
+        if (happiness < 70) {
+            happiness = happiness + (100 - happiness);
+        } else {
+            happiness = 70;
+        }
+    } else if (index === 2) {
+        happiness = happiness + 100;
+    }
     socialization = socialization + 20;
     health = health - 100;
     money = money + 100;
@@ -257,7 +292,32 @@ function help() {
     timerHelp = setInterval(() => {
         const min = 50;
         const max = 100;
-        random = Math.floor((Math.random() * (max - min + 1)) + min);
-        
+        let obj = document.querySelectorAll('.tamagochi__stats span');
+        arr = Object.keys(obj);
+        randomStat = Math.floor((Math.random() * arr.length));
+        if (randomStat === 0) {
+            food = food + Math.floor((Math.random() * (max - min + 1)) + min);
+            document.getElementById("valueFood").innerHTML = food;
+        }
+        if (randomStat === 1) {
+            clean = clean + Math.floor((Math.random() * (max - min + 1)) + min);
+            document.getElementById("valueClean").innerHTML = clean;
+        }
+        if (randomStat === 2) {
+            happiness = happiness + Math.floor((Math.random() * (max - min + 1)) + min);
+            document.getElementById("valueHappiness").innerHTML = happiness;
+        }
+        if (randomStat === 3) {
+            health = health + Math.floor((Math.random() * (max - min + 1)) + min);
+            document.getElementById("valueHealth").innerHTML = health;
+        }
+        if (randomStat === 4) {
+            socialization = socialization + Math.floor((Math.random() * (max - min + 1)) + min);
+            document.getElementById("valueSocialization").innerHTML = socialization;
+        }
+        if (randomStat === 5) {
+            money = money + Math.floor((Math.random() * (max - min + 1)) + min);
+            document.getElementById("valueMoney").innerHTML = money;
+        }
     }, 60000);
 }
